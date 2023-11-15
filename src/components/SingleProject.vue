@@ -2,6 +2,11 @@
   <div class="project">
     <div class="actions">
       <h3 @click="showDetails = !showDetails">{{ project.title }}</h3>
+      <div class="icons">
+        <span class="material-icons"> edit </span>
+        <span class="material-icons"> delete </span>
+        <span class="material-icons"> done </span>
+      </div>
     </div>
     <div v-if="showDetails" class="details">
       <p>{{ project.details }}</p>
@@ -28,10 +33,25 @@ export default {
   padding: 10px 20px;
   border-radius: 4px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.12);
-  /* Default color is not complete */
   border-left: 4px solid rgb(240, 20, 64);
 }
+
 h3 {
   cursor: pointer;
+}
+.material-icons {
+  cursor: pointer;
+  font-size: 24px;
+  color: #bbb;
+  margin-left: 10px;
+}
+.material-icons:hover {
+  color: rgb(102, 100, 100);
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>
