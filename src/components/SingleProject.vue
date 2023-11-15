@@ -1,5 +1,5 @@
 <template>
-  <div class="project">
+  <div class="project" :class="{ complete: project.complete }">
     <div class="actions">
       <h3 @click="showDetails = !showDetails">{{ project.title }}</h3>
       <div class="icons">
@@ -72,5 +72,9 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.project.complete {
+  border-left: 4px solid rgb(8, 180, 8);
 }
 </style>
