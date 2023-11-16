@@ -1,12 +1,32 @@
 <template>
-  <h1>Edit Project</h1>
+  <form>
+    <label>Title</label>
+    <input type="text" v-model="title" required />
+    <label>Details</label>
+    <textarea v-model="details" required></textarea>
+    <button>Update Project</button>
+  </form>
 </template>
 
 <script>
 export default {
-  name: "EditProject",
+  props: ["id"],
   data() {
-    return {};
+    return {
+      title: "",
+      details: "",
+      uri: "http://localhost:3000/projects/" + this.id,
+    };
+  },
+  mounted() {
+    fetch(this.uri)
+      // first we need to convert the response to json
+      .then((res) => res.json())
+      .then((data) => {
+        this.title = data.title;
+        this.details = data.details;
+      })
+      .catch((err) => console.log(err));
   },
 };
 </script>
