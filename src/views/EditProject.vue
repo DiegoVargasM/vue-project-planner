@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="handleEdit">
     <label>Title</label>
     <input type="text" v-model="title" required />
     <label>Details</label>
@@ -27,6 +27,23 @@ export default {
         this.details = data.details;
       })
       .catch((err) => console.log(err));
+  },
+  methods: {
+    handleEdit() {
+      let project = {
+        title: this.title,
+        details: this.details,
+      };
+      fetch(this.uri, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(project),
+      })
+        .then(() => {
+          this.$router.push({ name: "Home" });
+        })
+        .catch((err) => console.log(err));
+    },
   },
 };
 </script>
