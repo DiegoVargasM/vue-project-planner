@@ -1,14 +1,19 @@
 <template>
   <nav class="filter-nav">
-    <button>View All</button>
-    <button>Completed</button>
-    <button>Ongoing</button>
+    <button @click="updateFilter('all')">View All</button>
+    <button @click="updateFilter('completed')">Completed</button>
+    <button @click="updateFilter('ongoing')">Ongoing</button>
   </nav>
 </template>
 
 <script>
 export default {
   name: "FilterNav",
+  methods: {
+    updateFilter(filter) {
+      this.$emit("filterChange", filter);
+    },
+  },
 };
 </script>
 
