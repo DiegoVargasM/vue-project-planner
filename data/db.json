@@ -1,16 +1,28 @@
 {
   "projects": [
     {
-      "id": 1,
-      "title": "Create new homepage banner",
-      "details": "Lorem ipsum",
-      "complete": false
+      "title": "Project 1",
+      "details": "Lorem Ipsus",
+      "complete": true,
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Make marketing email",
-      "details": "Lorem ipsum",
-      "complete": true
+      "title": "Project 2",
+      "details": "Ipsus Lorem",
+      "complete": false,
+      "id": 2
+    },
+    {
+      "title": "Project 3",
+      "details": "Abcd EFG",
+      "complete": true,
+      "id": 3
+    },
+    {
+      "title": "Project 4",
+      "details": "This is another project",
+      "complete": false,
+      "id": 4
     }
   ]
 }
