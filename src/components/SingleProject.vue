@@ -50,7 +50,7 @@ export default {
 <style scoped>
 .project {
   background: white;
-  margin: 20px auto;
+  margin: 24px auto;
   padding: 10px 20px;
   border-radius: 4px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.12);
